@@ -46,5 +46,18 @@
 			</props>
 		</property>
 	</bean>
-
+	<!-- 配置国际化资源 -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename">
+			<value>language/language</value>
+		</property>
+	</bean>
+	<!-- 基于Cookie的本地化解析器 -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<!-- cookie超时时间 -->
+		<property name="cookieMaxAge" value="604800"/>
+		<!-- 默认语言-中文 -->
+		<property name="defaultLocale" value="zh_CN"/>
+		<property name="cookieName" value="Language"></property>
+	</bean>
 </beans>
