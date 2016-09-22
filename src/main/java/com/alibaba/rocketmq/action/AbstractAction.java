@@ -71,8 +71,6 @@ public abstract class AbstractAction {
         map.put(FORM_ACTION, title + ".do");
     }
 
-
-    @SuppressWarnings("unchecked")
     protected void addOptionValue(Collection<Option> options, String key, Object value) {
         if (value == null) {
             return;
@@ -85,7 +83,7 @@ public abstract class AbstractAction {
         }
         for (Option opt : options) {
             if (opt.getLongOpt().equals(key)) {
-                opt.getValuesList().add(value);
+                opt.getValuesList().add(value.toString());
             }
         }
     }
