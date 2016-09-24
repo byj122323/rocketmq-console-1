@@ -19,4 +19,7 @@ commons-httpclient:3.1
 httpcomponents-httpclient:4.5.2		
 netty-all:4.1.4.Final		
 fastjson:1.2.17		
-servlet-api:3.0-alpha-1
+servlet-api:3.0-alpha-1		
+功能列表(新)		
+-----------------------------------------------------------------------------
+国际化
