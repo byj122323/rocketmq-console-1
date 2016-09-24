@@ -9,7 +9,6 @@ commons-digester:2.1
 velocity-tools:2.0		
 rocketmq:3.5.8		
 commons-lang:2.6		
-groovy-all:1.6.3		
 velocity:1.7		
 slf4j-api:1.7.21		
 logback:1.1.7		
@@ -22,4 +21,4 @@ fastjson:1.2.17
 servlet-api:3.0-alpha-1		
 功能列表(新)		
 -----------------------------------------------------------------------------
-国际化
+1.国际化

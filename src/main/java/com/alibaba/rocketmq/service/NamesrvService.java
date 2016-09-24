@@ -57,79 +57,6 @@ public class NamesrvService extends AbstractService {
         throw t;
     }
 
-//    static final DeleteProjectGroupCommand deleteProjectGroupCommand = new DeleteProjectGroupCommand();
-    
-//    public Collection<Option> getOptionsForDeleteProjectGroup() {
-//        return getOptions(deleteProjectGroupCommand);
-//    }
-    
-//    @CmdTrace(cmdClazz = DeleteProjectGroupCommand.class)
-//    public boolean deleteProjectGroup(String ip, String project) throws Throwable {
-//        Throwable t = null;
-//        DefaultMQAdminExt defaultMQAdminExt = getDefaultMQAdminExt();
-//        String namespace = NamesrvUtil.NAMESPACE_PROJECT_CONFIG;
-//        try {
-//            if (StringUtils.isNotBlank(ip)) {
-//                defaultMQAdminExt.start();
-//                defaultMQAdminExt.deleteKvConfig(namespace, ip);
-//                return true;
-//            }
-//            else if (StringUtils.isNotBlank(project)) {
-//                defaultMQAdminExt.start();
-//                defaultMQAdminExt.deleteIpsByProjectGroup(project);
-//                return true;
-//            }
-//            else {
-//                throw new IllegalStateException("project or ip can not be all blank!");
-//            }
-//        }
-//        catch (Throwable e) {
-//            logger.error(e.getMessage(), e);
-//            t = e;
-//        }
-//        finally {
-//            shutdownDefaultMQAdminExt(defaultMQAdminExt);
-//        }
-//        throw t;
-//    }
-//
-//    static final GetProjectGroupCommand getProjectGroupCommand = new GetProjectGroupCommand();
-//
-//
-//    public Collection<Option> getOptionsForGetProjectGroup() {
-//        return getOptions(getProjectGroupCommand);
-//    }
-//
-//
-//    @CmdTrace(cmdClazz = GetProjectGroupCommand.class)
-//    public String getProjectGroup(String ip, String project) throws Throwable {
-//        Throwable t = null;
-//        DefaultMQAdminExt defaultMQAdminExt = getDefaultMQAdminExt();
-//        try {
-//            if (StringUtils.isNotBlank(ip)) {
-//                defaultMQAdminExt.start();
-//                String projectInfo = defaultMQAdminExt.getProjectGroupByIp(ip);
-//                return projectInfo;
-//            }
-//            else if (StringUtils.isNotBlank(project)) {
-//                defaultMQAdminExt.start();
-//                String ips = defaultMQAdminExt.getIpsByProjectGroup(project);
-//                return ips;
-//            }
-//            else {
-//                throw new IllegalStateException("project or ip can not be all blank!");
-//            }
-//        }
-//        catch (Throwable e) {
-//            logger.error(e.getMessage(), e);
-//            t = e;
-//        }
-//        finally {
-//            shutdownDefaultMQAdminExt(defaultMQAdminExt);
-//        }
-//        throw t;
-//    }
-
     static final UpdateKvConfigCommand updateKvConfigCommand = new UpdateKvConfigCommand();
 
 
@@ -156,32 +83,6 @@ public class NamesrvService extends AbstractService {
         }
         throw t;
     }
-
-//    static final UpdateProjectGroupCommand updateProjectGroupCommand = new UpdateProjectGroupCommand();
-//
-//    public Collection<Option> getOptionsForUpdateProjectGroup() {
-//        return getOptions(updateProjectGroupCommand);
-//    }
-//    
-//    @CmdTrace(cmdClazz = UpdateProjectGroupCommand.class)
-//    public boolean updateProjectGroup(String ip, String project) throws Throwable {
-//        Throwable t = null;
-//        DefaultMQAdminExt defaultMQAdminExt = getDefaultMQAdminExt();
-//        String namespace = NamesrvUtil.NAMESPACE_PROJECT_CONFIG;
-//        try {
-//            defaultMQAdminExt.start();
-//            defaultMQAdminExt.createAndUpdateKvConfig(namespace, ip, project);
-//            return true;
-//        }
-//        catch (Throwable e) {
-//            logger.error(e.getMessage(), e);
-//            t = e;
-//        }
-//        finally {
-//            shutdownDefaultMQAdminExt(defaultMQAdminExt);
-//        }
-//        throw t;
-//    }
 
     static final WipeWritePermSubCommand wipeWritePermSubCommand = new WipeWritePermSubCommand();
     

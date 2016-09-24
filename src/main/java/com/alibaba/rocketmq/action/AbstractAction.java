@@ -70,7 +70,7 @@ public abstract class AbstractAction {
         map.put(BODY_PAGE, getName().toLowerCase() + "/" + title + ".vm");
         map.put(FORM_ACTION, title + ".do");
     }
-
+    
     protected void addOptionValue(Collection<Option> options, String key, Object value) {
         if (value == null) {
             return;
