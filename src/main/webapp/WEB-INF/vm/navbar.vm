@@ -6,51 +6,51 @@
                 </div>
                 <div class="navbar-collapse collapse">
                       <ul class="nav navbar-nav">
-                            <li #if($cluster_flag)class="$cluster_flag"#end><a href="$root/cluster/list.do">Cluster</a></li>
-                            <li #if($topic_flag)class="$topic_flag"#end><a href="$root/topic/list.do">Topic</a></li>
+                            <li #if($cluster_flag)class="$cluster_flag"#end><a href="$root/cluster/list.do">#springMessage('Cluster')</a></li>
+                            <li #if($topic_flag)class="$topic_flag"#end><a href="$root/topic/list.do">#springMessage('Topic')</a></li>
                             <li class="dropdown $!connection_flag" >
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Connection<b class="caret"></b></a>
+                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">#springMessage('Connection')<b class="caret"></b></a>
                                  <ul class="dropdown-menu">
-                                    <li><a href="$root/connection/consumerConnection.do">ConsumerConnection</a></li>
-                                    <li><a href="$root/connection/producerConnection.do">ProducerConnection</a></li>
+                                    <li><a href="$root/connection/consumerConnection.do">#springMessage('ConsumerConnection')</a></li>
+                                    <li><a href="$root/connection/producerConnection.do">#springMessage('ProducerConnection')</a></li>
                                  </ul>
                             </li>
                 			<li class="dropdown $!namesrv_flag" >
-        							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Nameserv<b class="caret"></b></a>
+        							<a href="#" class="dropdown-toggle" data-toggle="dropdown">#springMessage('Nameserv')<b class="caret"></b></a>
         							<ul class="dropdown-menu">
-        								<li><a href="$root/namesrv/updateKvConfig.do">UpdateKvConfig</a></li>
-                                        <li><a href="$root/namesrv/deleteKvConfig.do">DeleteKvConfig</a></li>
-        								<li><a href="$root/namesrv/getProjectGroup.do">GetProjectGroup</a></li>
-        								<li><a href="$root/namesrv/updateProjectGroup.do">UpdateProjectGroup</a></li>
-        								<li><a href="$root/namesrv/deleteProjectGroup.do">DeleteProjectGroup</a></li>
-        								<li><a href="$root/namesrv/wipeWritePerm.do">WipeWritePerm</a></li>
+        								<li><a href="$root/namesrv/updateKvConfig.do">#springMessage('UpdateKvConfig')</a></li>
+                                        <li><a href="$root/namesrv/deleteKvConfig.do">#springMessage('DeleteKvConfig')</a></li>
+        								<li><a href="$root/namesrv/getProjectGroup.do">#springMessage('GetProjectGroup')</a></li>
+        								<li><a href="$root/namesrv/updateProjectGroup.do">#springMessage('UpdateProjectGroup')</a></li>
+        								<li><a href="$root/namesrv/deleteProjectGroup.do">#springMessage('DeleteProjectGroup')</a></li>
+        								<li><a href="$root/namesrv/wipeWritePerm.do">#springMessage('WipeWritePerm')</a></li>
         							 </ul>
         					</li>
     						
                 			<li class="dropdown $!message_flag" >
-        							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Message<b class="caret"></b></a>
+        							<a href="#" class="dropdown-toggle" data-toggle="dropdown">#springMessage('Message')<b class="caret"></b></a>
         							<ul class="dropdown-menu">
-        								<li><a href="$root/message/queryMsgById.do">QueryMsgById</a></li>
-                                        <li><a href="$root/message/queryMsgByKey.do">QueryMsgByKey</a></li>
-        								<li><a href="$root/message/queryMsgByOffset.do">QueryMsgByOffset</a></li>
+        								<li><a href="$root/message/queryMsgById.do">#springMessage('QueryMsgById')</a></li>
+                                        <li><a href="$root/message/queryMsgByKey.do">#springMessage('QueryMsgByKey')</a></li>
+        								<li><a href="$root/message/queryMsgByOffset.do">#springMessage('QueryMsgByOffset')</a></li>
         							 </ul>
         					</li>
         					<li class="dropdown $!broker_flag">
-                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Broker <b class="caret"></b></a>
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">#springMessage('Broker') <b class="caret"></b></a>
                                   <ul class="dropdown-menu">
-                                    <li><a href="$root/broker/brokerStats.do">BrokerStats</a></li>
-                                    <li><a href="$root/broker/updateBrokerConfig.do">UpdateBrokerConfig</a></li>
+                                    <li><a href="$root/broker/brokerStats.do">#springMessage('BrokerStats')</a></li>
+                                    <li><a href="$root/broker/updateBrokerConfig.do">#springMessage('UpdateBrokerConfig')</a></li>
                                   </ul>
                             </li>
                             <li class="dropdown $!offset_flag">
-                                 <a href="$root/offset/resetOffsetByTime.do">Offset</a>
+                                 <a href="$root/offset/resetOffsetByTime.do">#springMessage('Offset')</a>
                             </li>
 							<li class="dropdown $!consumer_flag">
-                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consumer <b class="caret"></b></a>
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">#springMessage('Consumer') <b class="caret"></b></a>
                                   <ul class="dropdown-menu">
-                                    <li><a href="$root/consumer/consumerProgress.do">ConsumerProgress</a></li>
-                                    <li><a href="$root/consumer/deleteSubGroup.do">DeleteSubGroup</a></li>
-									<li><a href="$root/consumer/updateSubGroup.do">UpdateSubGroup</a></li>
+                                    <li><a href="$root/consumer/consumerProgress.do">#springMessage('ConsumerProgress')</a></li>
+                                    <li><a href="$root/consumer/deleteSubGroup.do">#springMessage('DeleteSubGroup')</a></li>
+									<li><a href="$root/consumer/updateSubGroup.do">#springMessage('UpdateSubGroup')</a></li>
                                   </ul>
                             </li>
                       </ul>
