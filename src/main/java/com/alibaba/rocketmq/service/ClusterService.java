@@ -77,7 +77,7 @@ public class ClusterService extends AbstractService {
                 clusterInfoSerializeWrapper.getClusterAddrTable().entrySet();
 
         int clusterRow = clusterSet.size();
-        Table clusterTable = new Table(new String[] { "#Cluster Name", "#Broker Detail" }, clusterRow);
+        Table clusterTable = new Table(new String[] { "Cluster.Name", "Broker.Detail" }, clusterRow);
         Iterator<Map.Entry<String, Set<String>>> itCluster = clusterSet.iterator();
 
         while (itCluster.hasNext()) {
@@ -89,7 +89,7 @@ public class ClusterService extends AbstractService {
             Object[] clusterTR = clusterTable.createTR();
             clusterTR[0] = clusterName;
             Table brokerTable =
-                    new Table(new String[] { "#Broker Name", "#Broker Instance" }, brokerNameSet.size());
+                    new Table(new String[] { "Broker.Name", "Broker.Instance" }, brokerNameSet.size());
             clusterTR[1] = brokerTable;
             clusterTable.insertTR(clusterTR);// A
 

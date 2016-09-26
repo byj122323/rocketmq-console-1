@@ -6,7 +6,7 @@
 					<thead>
 						<tr>
 						#foreach($th in $!table.thead)
-                            <th>$th</th>
+                            <th>#springMessage($th)</th>
 						#end
 						</tr>
                     </thead>
