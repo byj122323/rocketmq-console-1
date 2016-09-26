@@ -64,17 +64,9 @@ public class ConsumerService extends AbstractService {
                 List<MessageQueue> mqList = new LinkedList<MessageQueue>();
                 mqList.addAll(consumeStats.getOffsetTable().keySet());
                 Collections.sort(mqList);
-                // System.out.printf("%-32s  %-32s  %-4s  %-20s  %-20s  %s\n",//
-                // "#Topic",//
-                // "#Broker Name",//
-                // "#QID",//
-                // "#Broker Offset",//
-                // "#Consumer Offset",//
-                // "#Diff" //
-                // );
                 String[] thead =
-                        new String[] { "#Topic", "#Broker Name", "#QID", "#Broker Offset",
-                                      "#Consumer Offset", "#Diff" };
+                        new String[] { "Topic", "Broker.Name", "queueId", "Broker.Offset",
+                                      "Consumer.Offset", "Diff" };
                 long diffTotal = 0L;
                 Table table = new Table(thead, mqList.size());
                 for (MessageQueue mq : mqList) {
@@ -82,15 +74,6 @@ public class ConsumerService extends AbstractService {
 
                     long diff = offsetWrapper.getBrokerOffset() - offsetWrapper.getConsumerOffset();
                     diffTotal += diff;
-
-                    // System.out.printf("%-32s  %-32s  %-4d  %-20d  %-20d  %d\n",//
-                    // UtilAll.frontStringAtLeast(mq.getTopic(), 32),//
-                    // UtilAll.frontStringAtLeast(mq.getBrokerName(), 32),//
-                    // mq.getQueueId(),//
-                    // offsetWrapper.getBrokerOffset(),//
-                    // offsetWrapper.getConsumerOffset(),//
-                    // diff //
-                    // );
                     Object[] tr = table.createTR();
                     tr[0] = UtilAll.frontStringAtLeast(mq.getTopic(), 32);
                     tr[1] = UtilAll.frontStringAtLeast(mq.getBrokerName(), 32);
@@ -102,29 +85,15 @@ public class ConsumerService extends AbstractService {
                     table.insertTR(tr);
                 }
 
-                // System.out.println("");
-                // System.out.printf("Consume TPS: %d\n",
-                // consumeStats.getConsumeTps());
-                // System.out.printf("Diff Total: %d\n", diffTotal);
-
                 table.addExtData("Consume TPS:", str(consumeStats.getConsumeTps()));
                 table.addExtData("Diff Total:", str(diffTotal));
 
                 return table;
             }
             else {
-                // System.out.printf("%-32s  %-6s  %-24s %-5s  %-14s  %-7s  %s\n",//
-                // "#Group",//
-                // "#Count",//
-                // "#Version",//
-                // "#Type",//
-                // "#Model",//
-                // "#TPS",//
-                // "#Diff Total"//
-                // );
 
                 String[] thead =
-                        new String[] { "#Group", "#Count", "#Version", "#Type", "#Model", "#TPS",
+                        new String[] { "Group", "#Count", "Version", "#Type", "#Model", "#TPS",
                                       "#Diff Total" };
 
                 List<GroupConsumeInfo> groupConsumeInfoList = new LinkedList<GroupConsumeInfo>();
@@ -175,16 +144,6 @@ public class ConsumerService extends AbstractService {
 
                         Table table = new Table(thead, groupConsumeInfoList.size());
                         for (GroupConsumeInfo info : groupConsumeInfoList) {
-                            // System.out.printf("%-32s  %-6d  %-24s %-5s  %-14s  %-7d  %d\n",//
-                            // UtilAll.frontStringAtLeast(info.getGroup(),
-                            // 32),//
-                            // info.getCount(),//
-                            // info.versionDesc(),//
-                            // info.consumeTypeDesc(),//
-                            // info.messageModelDesc(),//
-                            // info.getConsumeTps(),//
-                            // info.getDiffTotal()//
-                            // );
                             Object[] tr = table.createTR();
                             tr[0] = UtilAll.frontStringAtLeast(info.getGroup(), 32);
                             tr[1] = str(info.getCount());

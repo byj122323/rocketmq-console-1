@@ -70,14 +70,14 @@ public class ClusterService extends AbstractService {
         // "#OutTPS", "#InTotalYest", "#OutTotalYest", "#InTotalToday",
         // "#OutTotalToday" };
         String[] instanceThead =
-                new String[] { "#BID", "#Addr", "#Version", "#InTPS", "#OutTPS", "#InTotalYest",
-                              "#OutTotalYest", "#InTotalToday", "#OutTotalToday" };
+                new String[] { "BrokerId", "Address", "Version", "InTPS", "OutTPS", "InTotalYest",
+                              "OutTotalYest", "InTotalToday", "OutTotalToday" };
 
         Set<Map.Entry<String, Set<String>>> clusterSet =
                 clusterInfoSerializeWrapper.getClusterAddrTable().entrySet();
 
         int clusterRow = clusterSet.size();
-        Table clusterTable = new Table(new String[] { "#Cluster Name", "#Broker Detail" }, clusterRow);
+        Table clusterTable = new Table(new String[] { "Cluster.Name", "Broker.Detail" }, clusterRow);
         Iterator<Map.Entry<String, Set<String>>> itCluster = clusterSet.iterator();
 
         while (itCluster.hasNext()) {
@@ -89,7 +89,7 @@ public class ClusterService extends AbstractService {
             Object[] clusterTR = clusterTable.createTR();
             clusterTR[0] = clusterName;
             Table brokerTable =
-                    new Table(new String[] { "#Broker Name", "#Broker Instance" }, brokerNameSet.size());
+                    new Table(new String[] { "Broker.Name", "Broker.Instance" }, brokerNameSet.size());
             clusterTR[1] = brokerTable;
             clusterTable.insertTR(clusterTR);// A
 

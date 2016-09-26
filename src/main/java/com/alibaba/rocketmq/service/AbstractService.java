@@ -20,6 +20,7 @@ public abstract class AbstractService {
 
     protected DefaultMQAdminExt getDefaultMQAdminExt() {
         DefaultMQAdminExt defaultMQAdminExt = new DefaultMQAdminExt();
+        defaultMQAdminExt.setVipChannelEnabled(false);
         defaultMQAdminExt.setInstanceName(Long.toString(System.currentTimeMillis()));
         return defaultMQAdminExt;
     }
@@ -33,7 +34,6 @@ public abstract class AbstractService {
     protected Collection<Option> getOptions(SubCommand subCommand) {
         Options options = new Options();
         subCommand.buildCommandlineOptions(options);
-        @SuppressWarnings("unchecked")
         Collection<Option> col = options.getOptions();
         return col;
     }

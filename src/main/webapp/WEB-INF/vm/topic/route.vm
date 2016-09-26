@@ -1,18 +1,18 @@
 <table class="table table-bordered table-hover">  
       <tbody>  
 			<tr>
-                <td>brokerDatas:</td>
+                <td>#springMessage('brokerDatas'):</td>
 				<td>
 				<table class="table table-bordered table-hover">
 					#foreach($brokerData in $topicRouteData.brokerDatas) 
 						<tr>
-                            <td>brokerName:</td>
+                            <td>#springMessage('Broker.Name'):</td>
                             <td>
 								$brokerData.brokerName
 							</td>
 						</tr>
 						<tr>
-                            <td>brokerAddrs:</td>
+                            <td>#springMessage('Address'):</td>
                             <td>
 								<table class="table table-bordered table-hover">
 									#foreach($entry in $brokerData.brokerAddrs.entrySet())
@@ -29,21 +29,21 @@
 				</td>
             </tr>
 			<tr>
-                <td>queueDatas:</td>
+                <td>#springMessage('queueDatas'):</td>
 				<td>
 					<table class="table table-bordered table-hover">
 						#foreach($queueData in $topicRouteData.queueDatas) 
 							<tr>
-                                <td>brokerName</td><td>$queueData.brokerName</td>
+                                <td>#springMessage('Broker.Name')</td><td>$queueData.brokerName</td>
 							</tr>
 							<tr>
-                                <td>readQueueNums</td><td>$queueData.readQueueNums</td>
+                                <td>#springMessage('readQueueNums')</td><td>$queueData.readQueueNums</td>
 							</tr>
 							<tr>
-                                <td>writeQueueNums</td><td>$queueData.writeQueueNums</td>
+                                <td>#springMessage('writeQueueNums')</td><td>$queueData.writeQueueNums</td>
 							</tr>
 							<tr>
-                                <td>perm</td><td>$queueData.perm</td>
+                                <td>#springMessage('perm')</td><td>$queueData.perm</td>
 							</tr>
 						#end
                     </table>

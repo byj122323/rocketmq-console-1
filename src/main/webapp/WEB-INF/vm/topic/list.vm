@@ -1,14 +1,14 @@
 
       <div class="container">
-      <button class="btn btn-sm btn-success" type="button" onclick="add()">Add</button>
+      <button class="btn btn-sm btn-success" type="button" onclick="add()">#springMessage('Add')</button>
       </div>
 	  <p>&nbsp;</p>
       <div class="container theme-showcase"><!-- /container  -->
     		<table class="table table-bordered table-hover">  
                   <thead>  
                     <tr>  
-                      <th>Topic</th>
-    				  <th>operations</th>
+                      <th>#springMessage('Topic')</th>
+    				  <th>#springMessage('operations')</th>
                     </tr>  
                   </thead>  
                   <tbody>
@@ -17,13 +17,13 @@
     						#foreach($topicName in $tr)
     						  <td>$topicName</td>
     						  <td> 
-    							<button class="btn btn-sm btn-info" type="button" onclick="stat('$topicName')">Stat</button>
+    							<button class="btn btn-sm btn-info" type="button" onclick="stat('$topicName')">#springMessage('Stat')</button>
     							&nbsp;&nbsp;  
-    							<button class="btn btn-sm btn-info" type="button" onclick="route('$topicName')">Route</button>
+    							<button class="btn btn-sm btn-info" type="button" onclick="route('$topicName')">#springMessage('Route')</button>
     							&nbsp;&nbsp;  
-    							<button class="btn btn-sm btn-info" type="button" onclick="upd('$topicName')">Update</button>
+    							<button class="btn btn-sm btn-info" type="button" onclick="upd('$topicName')">#springMessage('Update')</button>
     							&nbsp;&nbsp; 
-                                <button class="btn btn-sm btn-danger" type="button" onclick="del('$topicName')">Delete</button>
+                                <button class="btn btn-sm btn-danger" type="button" onclick="del('$topicName')">#springMessage('Delete')</button>
     						  </td>
     						 #end
         				</tr>
