@@ -86,16 +86,8 @@ public class TopicService extends AbstractService {
             List<MessageQueue> mqList = new LinkedList<MessageQueue>();
             mqList.addAll(topicStatsTable.getOffsetTable().keySet());
             Collections.sort(mqList);
-
-            // System.out.printf("%-32s  %-4s  %-20s  %-20s    %s\n",//
-            // "#Broker Name",//
-            // "#QID",//
-            // "#Min Offset",//
-            // "#Max Offset",//
-            // "#Last Updated" //
-            // );
             String[] thead =
-                    new String[] { "#Broker Name", "#QID", "#Min Offset", "#Max Offset", "#Last Updated" };
+                    new String[] { "Broker.Name", "queueId", "Min.Offset", "Max.Offset", "Last.Updated" };
             Table table = new Table(thead, mqList.size());
             for (MessageQueue mq : mqList) {
                 TopicOffset topicOffset = topicStatsTable.getOffsetTable().get(mq);

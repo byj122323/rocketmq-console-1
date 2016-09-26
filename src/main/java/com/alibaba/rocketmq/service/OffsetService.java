@@ -61,34 +61,12 @@ public class OffsetService extends AbstractService {
             defaultMQAdminExt.start();
             List<RollbackStats> rollbackStatsList =
                     defaultMQAdminExt.resetOffsetByTimestampOld(consumerGroup, topic, timestamp, force);
-            // System.out
-            // .printf(
-            // "rollback consumer offset by specified consumerGroup[%s], topic[%s], force[%s], timestamp(string)[%s], timestamp(long)[%s]\n",
-            // consumerGroup, topic, force, timeStampStr, timestamp);
-            //
-            // System.out.printf("%-20s  %-20s  %-20s  %-20s  %-20s  %-20s\n",//
-            // "#brokerName",//
-            // "#queueId",//
-            // "#brokerOffset",//
-            // "#consumerOffset",//
-            // "#timestampOffset",//
-            // "#rollbackOffset" //
-            // );
             String[] thead =
-                    new String[] { "#brokerName", "#queueId", "#brokerOffset", "#consumerOffset",
-                                  "#timestampOffset", "#rollbackOffset" };
+                    new String[] { "brokerName", "queueId", "brokerOffset", "consumerOffset",
+                                  "timestampOffset", "rollbackOffset" };
             Table table = new Table(thead, rollbackStatsList.size());
 
             for (RollbackStats rollbackStats : rollbackStatsList) {
-                // System.out.printf("%-20s  %-20d  %-20d  %-20d  %-20d  %-20d\n",//
-                // UtilAll.frontStringAtLeast(rollbackStats.getBrokerName(),
-                // 32),//
-                // rollbackStats.getQueueId(),//
-                // rollbackStats.getBrokerOffset(),//
-                // rollbackStats.getConsumerOffset(),//
-                // rollbackStats.getTimestampOffset(),//
-                // rollbackStats.getRollbackOffset() //
-                // );
                 Object[] tr = table.createTR();
                 tr[0] = UtilAll.frontStringAtLeast(rollbackStats.getBrokerName(), 32);
                 tr[1] = str(rollbackStats.getQueueId());

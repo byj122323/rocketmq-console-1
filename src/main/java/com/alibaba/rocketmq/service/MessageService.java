@@ -190,12 +190,7 @@ public class MessageService extends AbstractService {
             long end = System.currentTimeMillis() - (h * 60 * 60 * 1000);
             long begin = end - (6 * 60 * 60 * 1000);
             QueryResult queryResult = defaultMQAdminExt.queryMessage(topicName, msgKey, 32, begin, end);
-
-            // System.out.printf("%-50s %-4s  %s\n",//
-            // "#Message ID",//
-            // "#QID",//
-            // "#Offset");
-            String[] thead = new String[] { "#Message ID", "#QID", "#Offset" };
+            String[] thead = new String[] { "Message.ID", "queueId", "Offset" };
             int row = queryResult.getMessageList().size();
             Table table = new Table(thead, row);
 

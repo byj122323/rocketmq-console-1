@@ -55,20 +55,6 @@ public class ClusterService extends AbstractService {
     private Table doList(DefaultMQAdminExt defaultMQAdminExt) throws Exception {
 
         ClusterInfo clusterInfoSerializeWrapper = defaultMQAdminExt.examineBrokerClusterInfo();
-        // System.out.printf("%-16s  %-32s  %-4s  %-22s %-22s %11s %11s\n",//
-        // "#Cluster Name",//
-        // "#Broker Name",//
-        // "#BID",//
-        // "#Addr",//
-        // "#Version",//
-        // "#InTPS",//
-        // "#OutTPS"//
-        // );
-        // String[] thead =
-        // new String[] { "#Cluster Name", "#Broker Name", "#BID", "#Addr",
-        // "#Version", "#InTPS",
-        // "#OutTPS", "#InTotalYest", "#OutTotalYest", "#InTotalToday",
-        // "#OutTotalToday" };
         String[] instanceThead =
                 new String[] { "BrokerId", "Address", "Version", "InTPS", "OutTPS", "InTotalYest",
                               "OutTotalYest", "InTotalToday", "OutTotalToday" };
