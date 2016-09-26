@@ -20,7 +20,7 @@
 										<!-- recursive -->
 										#table($td)
 									#else
-										$td
+										#springMessage($td)
 									#end
 								</td>
         					#end
@@ -31,7 +31,7 @@
 			<!-- properties-->
 			#if($!table.extData && $!table.extData.size() > 0)
 				#foreach($entry in $!table.extData.entrySet())
-					<p>$entry.key:$entry:value</p>	
+					<p>$entry.key:$entry.value</p>	
 				#end
 			#end
 	#end
@@ -44,7 +44,7 @@
     		<form action="$action" method="post">
     			#foreach($option in $options)
         			<tr>
-                       <th>$option.longOpt:</th>
+                       <th>#springMessage($option.longOpt):</th>
                        <td>
     					<input class="form-inline span2" type="text" name="$option.longOpt" 
 							#if($!option.getValue() && $!option.getValue() != "") value='$!option.getValue()' #end/>
@@ -56,7 +56,7 @@
     			<tr>
                     <td colspan="2">
     					<center>
-    						<button class="btn btn-success" type="submit" >Submit</button>
+    						<button class="btn btn-success" type="submit" >#springMessage('Submit')</button>
                         </center>
     				</td>
                 </tr>

@@ -93,8 +93,8 @@ public class ConsumerService extends AbstractService {
             else {
 
                 String[] thead =
-                        new String[] { "Group", "#Count", "Version", "#Type", "#Model", "#TPS",
-                                      "#Diff Total" };
+                        new String[] { "Group", "Count", "Version", "Type", "Model", "TPS",
+                                      "Diff.Total" };
 
                 List<GroupConsumeInfo> groupConsumeInfoList = new LinkedList<GroupConsumeInfo>();
                 TopicList topicList = defaultMQAdminExt.fetchAllTopicList();
