@@ -70,8 +70,8 @@ public class ClusterService extends AbstractService {
         // "#OutTPS", "#InTotalYest", "#OutTotalYest", "#InTotalToday",
         // "#OutTotalToday" };
         String[] instanceThead =
-                new String[] { "#BID", "#Addr", "#Version", "#InTPS", "#OutTPS", "#InTotalYest",
-                              "#OutTotalYest", "#InTotalToday", "#OutTotalToday" };
+                new String[] { "BrokerId", "Address", "Version", "InTPS", "OutTPS", "InTotalYest",
+                              "OutTotalYest", "InTotalToday", "OutTotalToday" };
 
         Set<Map.Entry<String, Set<String>>> clusterSet =
                 clusterInfoSerializeWrapper.getClusterAddrTable().entrySet();
